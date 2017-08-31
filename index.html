@@ -1,1 +1,28 @@
-<iframe src="http://std.lcqf360.com/jxc/product_list.html" width="100%"></iframe>
+<iframe src="http://std.lcqf360.com/jxc/product_list.html" frameborder="0" scrolling="no" id="test" onload="this.height=100">
+
+</iframe>
+<script type="text/javascript">
+
+function reinitIframe(){
+
+var iframe = document.getElementById("test");
+
+try{
+
+var bHeight = iframe.contentWindow.document.body.scrollHeight;
+
+var dHeight = iframe.contentWindow.document.documentElement.scrollHeight;
+
+var height = Math.max(bHeight, dHeight);
+
+iframe.height = height;
+
+console.log(height);
+
+}catch (ex){}
+
+}
+
+window.setInterval("reinitIframe()", 200);
+
+</script>
